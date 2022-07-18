@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Payment</title>
+
+    <link rel="stylesheet" href="assets/base.css" />
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <script src="/assets/utils.js" defer></script>
+    <script src="/assets/index.js" defer></script>
+  </head>
+  <body>
+    <main>
+      <h1>Stripe Payment</h1>
+
+      <div id="loading-skeleton" class="card d-none">
+        <!-- <div class="card__image loading"></div> -->
+        <div class="card__title loading"></div>
+        <div class="card__description loading"></div>
+        <div class="card__title loading"></div>
+        <div class="card__description loading"></div>
+      </div>
+
+      <form id="payment-details">
+          <div>
+            <label>
+              <div class="py-10 font-bold">
+                Amount:
+              </div>
+                <input class="text-09-em pay-detail-input font-raleway" type="number" id="amount" min="0" width="100%" max="99999"/>
+            </label>
+            <label>
+              <div class="py-10 font-bold">
+                Currency:
+              </div>
+              <select id="currency" name="currency" class="text-09-em pay-detail-input font-normal font-raleway">
+                <option value="" selected>Please select currency</option>
+                <option value="USD">USD</option>
+                <option value="EUR">EUR</option>
+                <option value="INR">INR</option>
+              </select>
+            </label>
+            <button type="submit" class="font-raleway width-100 letter-spacing-1">Checkout</button>
+          </div>
+      </form>
+
+      <form id="payment-form" class="d-none">
+        <div id="payment-element">
+          <!-- Elements will create form elements here -->
+        </div>
+        <button class="font-raleway width-100 letter-spacing-1" id="submit">Pay now</button>
+      </form>
+      <div id="error-message">
+        <!-- Display error message to your customers here -->
+      </div>
+
+      <div id="messages" role="alert" style="display: none;"></div>
+    </main>
+  </body>
+</html>
