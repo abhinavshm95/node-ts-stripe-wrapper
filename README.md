@@ -3,3 +3,6 @@ Stripe wrapper that listens to webhooks defined and also allows to additional st
 
 ## Usage
 Build & Run server: `npm run build-serve`
+
+## Working Project Video
+- https://youtu.be/tsSP7o9uRIM
